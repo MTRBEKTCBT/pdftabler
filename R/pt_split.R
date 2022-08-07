@@ -1,10 +1,20 @@
-# 関数：データの抽出 ------------------
-# 目的：1列のベクトルで抽出された表データを1レコードずつ分割すること
-# 問題：1レコードの長さが異なっている場合、うまく行頭を取り出すことができない
-vpr_split <- \(
+#' Extract data
+#'
+#' @param data vector or list of vector
+#' @param initial number of begining
+#' @param n_col number of columns
+#' @param dur_month duration in months
+#' @examples
+#' \dontrun{
+#' conbini |>
+#'   pt_cell() |>
+#'   purrr::flatten_chr() |>
+#'   pt_split(initial = 29)
+#'   }
+pt_split <- \(
   data, # データベクトル
   initial, # 始点スカラ
-  n_col, # 列数スカラ
+  n_col = 15, # 列数スカラ
   dur_month = 1 # 期間スカラ
 ) {
   purrr::pmap(
@@ -22,4 +32,3 @@ vpr_split <- \(
   )
 }
 
-df |> vpr_split(initial = idx[1,1], n_col = 15, dur_month = 2)

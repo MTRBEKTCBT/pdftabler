@@ -1,38 +1,22 @@
 ---
-output: github_document
+title: "pt_split"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{pt_split}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
 
-# pdftabler
-
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of pdftabler is to 
-create arranged data frame extracted from PDF file by R.
-It deals especially with time-series data.
-This package is required pdftools.
-
-## Installation
-
-You can install the development version of pdftabler from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("MTRBEKTCBT/pdftabler")
+```{r setup}
+library(pdftabler)
 ```
-
-## Example
 
 The data extracted from a package `pdftools::pdf_text` is 
 often dirty by unnecessary spaces 
@@ -49,7 +33,6 @@ which originally displayed in PDF.
 To process this task, use `pt_cell()` and `pt_split()`.
 
 ```{r}
-library(pdftabler)
 conbini |>
   pt_cell() |>
   purrr::flatten_chr() |>
@@ -101,5 +84,3 @@ I packed a method for it that processes required task at one step.
 ```{r}
 df |> pt_conbini()
 ```
-
-
