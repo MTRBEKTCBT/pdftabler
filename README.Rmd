@@ -27,9 +27,11 @@ This package is required pdftools.
 
 You can install the development version of pdftabler from [GitHub](https://github.com/) with:
 
-``` r
+```{r}
 # install.packages("devtools")
-devtools::install_github("MTRBEKTCBT/pdftabler")
+# devtools::install_github("MTRBEKTCBT/pdftabler")
+
+library(pdftabler)
 ```
 
 ## Example
@@ -49,7 +51,6 @@ which originally displayed in PDF.
 To process this task, use `pt_cell()` and `pt_split()`.
 
 ```{r}
-library(pdftabler)
 conbini |>
   pt_cell() |>
   purrr::flatten_chr() |>
@@ -70,7 +71,7 @@ which place any word or symbol is in the vector.
 key <- sprintf("%d月", 1:12)
 
 idx <- 
-conbini |>
+  conbini |>
   pt_cell() |>
   purrr::flatten_chr() |>
   pt_index(keywords = key)

@@ -4,7 +4,9 @@
 #' @return splited data, each element has a each record.
 #' @examples
 #' \dontrun{conbini |> pt_cell()}
+#' @export
+#' @importFrom stringr str_split
 pt_cell <- \(data) {
   data |>
-    stringr::str_split(" +")
+    str_split(" +")
 }

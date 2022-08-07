@@ -4,6 +4,9 @@
 #' @param keywords character vector which indicates first column of each raw.
 #' @examples
 #' \dontrun{df |> pt_index()}
+#' @export
+#' @importFrom purrr pmap set_names
+#' @importFrom tibble tibble as_tibble
 pt_index <- \(data, keywords) {
   purrr::pmap(
     tibble::tibble(
