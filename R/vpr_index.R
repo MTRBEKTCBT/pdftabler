@@ -1,29 +1,47 @@
+#' data is vector
+vpr_index <- \(data, keywords) {
+  purrr::pmap(
+    tibble::tibble(
+      i = seq_along(keywords)
+    ),
+    \(i) {
+      which(data == keywords[i])
+    }
+  ) |>
+    purrr::set_names(keywords) |>
+    tibble::as_tibble() |>
+    t() |>
+    as.data.frame()
+}
+
+
 # index 各月の始まりのベクトル位置をデータ化する -----
 key_month <- sprintf("%d月", 1:12)
-month_idx <- 
-  pmap(
+month_idx <-
+  purrr::pmap(
     list(i = seq_along(key_month)),
     \(i) {
-      which(alldata == key_month[i])
+      which(conbini == key_month[i])
     }
   )
-month_idx <- 
+month_idx <-
   month_idx |>
-  set_names(str_c("M", seq_along(month_idx))) |> 
-  as_tibble() |> 
-  t() |> 
+  purrr::set_names(stringr::str_c("M", seq_along(month_idx))) |>
+  tibble::as_tibble() |>
+  t() |>
   as.data.frame()
 
+month_idx
 # 1枚目 -----------------------
 idx_df1 <- vector("list", length(key_month))
 for (i in seq_along(key_month)) {
   idx_df1[[i]] <- which(df1 == key_month[i])
 }
-idx_df1 <- 
-  idx_df1 |> 
-  set_names(str_c("M", seq_along(idx_df1))) |> 
-  as_tibble() |> 
-  t() |> 
+idx_df1 <-
+  idx_df1 |>
+  set_names(str_c("M", seq_along(idx_df1))) |>
+  as_tibble() |>
+  t() |>
   as.data.frame()
 
 # 2枚目 -----------------------
@@ -31,11 +49,11 @@ idx_df2 <- vector("list", length(key_month))
 for (i in seq_along(key_month)) {
   idx_df2[[i]] <- which(df2 == key_month[i])
 }
-idx_df2 <- 
-  idx_df2 |> 
-  set_names(str_c("M", seq_along(idx_df2))) |> 
-  as_tibble() |> 
-  t() |> 
+idx_df2 <-
+  idx_df2 |>
+  set_names(str_c("M", seq_along(idx_df2))) |>
+  as_tibble() |>
+  t() |>
   as.data.frame()
 
 # 各行頭までの長さを計算します。--------------------
