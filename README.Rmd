@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+library(pdftabler)
 ```
 
 # pdftabler
@@ -27,7 +28,7 @@ This package is required pdftools.
 
 You can install the development version of pdftabler from [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("MTRBEKTCBT/pdftabler")
 ```
@@ -49,17 +50,16 @@ which originally displayed in PDF.
 To process this task, use `pt_cell()` and `pt_split()`.
 
 ```{r}
-library(pdftabler)
 conbini |>
   pt_cell() |>
   purrr::flatten_chr() |>
   pt_split(initial = 29, n_col = 15, dur_month = 2)
 ```
 
-You will notice about those arguments in `pt_split()`,
-`initial` denotes a initial cell for records.
-Note that it indicates a record for inner data.
-Do not specify a raw of column names.
+The argument `initial` in `pt_split()`
+denotes a initial cell for records.
+Note that it indicates a record for inner data,
+do not specify a raw of column names.
 
 We will also wonder which number is to be `initial`?
 We can use `pt_index` to resolve this task.
@@ -70,12 +70,12 @@ which place any word or symbol is in the vector.
 key <- sprintf("%d月", 1:12)
 
 idx <- 
-conbini |>
+  conbini |>
   pt_cell() |>
   purrr::flatten_chr() |>
   pt_index(keywords = key)
 
-idx
+idx |> head()
 ```
 
 Now we can use another function `pt_split_multi` that can handle dataframe as argument.
@@ -88,7 +88,8 @@ conbini |>
   pt_cell() |>
   purrr::flatten_chr() |>
   pt_split_multi(index = idx)
-df
+
+df |> head()
 ```
 
 Then, we may also complain about data type, 
@@ -99,7 +100,7 @@ limited in time period,
 I packed a method for it that processes required task at one step.
 
 ```{r}
-df |> pt_conbini()
+df |> pt_modify() |> head()
 ```
 
 

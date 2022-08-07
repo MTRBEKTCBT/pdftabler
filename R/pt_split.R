@@ -11,6 +11,9 @@
 #'   purrr::flatten_chr() |>
 #'   pt_split(initial = 29)
 #'   }
+#' @export
+#' @importFrom purrr pmap
+#' @importFrom tibble tibble
 pt_split <- \(
   data, # データベクトル
   initial, # 始点スカラ

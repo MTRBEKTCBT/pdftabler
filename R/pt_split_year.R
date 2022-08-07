@@ -9,6 +9,9 @@
 #'   pt_cell() |>
 #'   purrr::flatten_chr() |>
 #'   pt_split_year()
+#' @export
+#' @importFrom purrr pmap_df
+#' @importFrom tibble tibble
 pt_split_year <- \(data, index = idx[seq(nrow(idx)), 1], n_col = 15) {
   purrr::pmap_df(
     tibble::tibble(

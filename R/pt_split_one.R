@@ -10,6 +10,7 @@
 #'   purrr::flatten_chr() |>
 #'   pt_split_one(initial = idx[12,1])
 #'   }
+#' @importFrom tibble as_tibble
 pt_split_one <- \(
   data, # データベクトル
   initial, # 始点スカラ
