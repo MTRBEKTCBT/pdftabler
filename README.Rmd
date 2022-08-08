@@ -45,7 +45,8 @@ This is a basic example which shows you how to
 get the data obtained from pdf to a complete dataframe.
 
 Suppose we already have vector data extracted by `pdftools::pdf_text` that has just been extracted.
-We'll use `conbini` data which records JFA sales from 2005 to 2021
+We'll use `conbini` data which records 
+[JFA sales from 2005 to 2021](https://www.jfa-fc.or.jp/particle/320.html)
 to show how each function works.
 
 First of all, the data has to be split into each cell of table
