@@ -11,7 +11,6 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-library(pdftabler)
 ```
 
 # pdftabler
@@ -34,6 +33,10 @@ devtools::install_github("MTRBEKTCBT/pdftabler")
 ```
 
 ## Example
+
+```{r}
+library(pdftabler)
+```
 
 The data extracted from a package `pdftools::pdf_text` is 
 often dirty by unnecessary spaces 

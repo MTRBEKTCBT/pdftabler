@@ -22,6 +22,10 @@ devtools::install_github("MTRBEKTCBT/pdftabler")
 
 ## Example
 
+``` r
+library(pdftabler)
+```
+
 The data extracted from a package `pdftools::pdf_text` is often dirty by
 unnecessary spaces and is a vector rather than a dataframe. This is a
 basic example which shows you how to get the data obtained from pdf to a
