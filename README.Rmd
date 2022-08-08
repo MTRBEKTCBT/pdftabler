@@ -107,4 +107,19 @@ I packed a method for it that processes required task at one step.
 df |> pt_modify() |> head()
 ```
 
+Now we can analyze the data as always.
+
+```{r}
+library(ggplot2)
+df |> 
+  pt_modify() |> 
+  dplyr::mutate(date = stringr::str_c(year, month, "01") |> lubridate::ymd()) |> 
+  ggplot(aes(date, V5)) +
+  geom_line() +
+  labs(
+    title = "コンビニエンスストアの売上高前年比の推移",
+    x = "月",
+    y = "既存店売上高前年比"
+  )
+```
 
