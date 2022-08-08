@@ -32,8 +32,8 @@ basic example which shows you how to get the data obtained from pdf to a
 complete dataframe.
 
 Suppose we already have vector data extracted by `pdftools::pdf_text`
-that has just been extracted. We’ll use `conbini` data which records
-[JFA sales from 2005 to
+that has just been extracted. For illustration, we’ll use `conbini` data
+which records [JFA sales from 2005 to
 2021](https://www.jfa-fc.or.jp/particle/320.html) to show how each
 function works.
 
@@ -135,3 +135,21 @@ df |> pt_modify() |> head()
 #> # … with 4 more variables: V12 <dbl>, V13 <dbl>, V14 <dbl>, V15 <dbl>
 #> # ℹ Use `colnames()` to see all variable names
 ```
+
+Now we can analyze the data as always.
+
+``` r
+library(ggplot2)
+df |> 
+  pt_modify() |> 
+  dplyr::mutate(date = stringr::str_c(year, month, "01") |> lubridate::ymd()) |> 
+  ggplot(aes(date, V5)) +
+  geom_line() +
+  labs(
+    title = "コンビニエンスストアの売上高前年比の推移",
+    x = "月",
+    y = "既存店売上高前年比"
+  )
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
