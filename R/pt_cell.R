@@ -7,7 +7,8 @@
 #' @examples
 #' \dontrun{conbini |> pt_cell()}
 #' @export
-pt_cell <- \(data) {
+pt_cell <- \(data, sep = " +") {
   data |>
-    stringr::str_split(" +")
+    stringr::str_split(sep) |>
+    purrr::flatten_chr()
 }

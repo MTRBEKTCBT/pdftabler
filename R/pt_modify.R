@@ -6,14 +6,15 @@
 #' @export
 #' @importFrom dplyr mutate across everything rename
 #' @importFrom readr parse_number
-pt_modify <- \(data) {
+pt_modify <- \(data, .b, col = everything()) {
+  dur_year <- .b:(dim(data)[1] / 12 + .b - 1)
   data |>
    mutate(
       # 余計な記号を除去
-      across(everything(),
+      across(col,
                     ~ parse_number(.x, na = c("", "NA"))
       ),
-      year = rep(2005:2021, each = 12), .before = V1
+      year = rep(dur_year, each = 12), .before = V1
     ) |>
     rename(
       month = V1

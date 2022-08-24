@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<h1 id="pdftabler">pdftabler</h1>
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+<p>The goal of pdftabler is to create arranged data frame extracted from PDF file by R. It deals especially with time-series data. This package is required pdftools.</p>
+<h2 id="installation">Installation</h2>
+<p>You can install the development version of pdftabler from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;MTRBEKTCBT/pdftabler&quot;</span>)</span></code></pre></div>
+<h2 id="example">Example</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">library</span>(pdftabler)</span></code></pre></div>
+<p>The data extracted from a package <code>pdftools::pdf_text</code> is often dirty by unnecessary spaces and is a vector rather than a dataframe. This is a basic example which shows you how to get the data obtained from pdf to a complete dataframe.</p>
+<p>Suppose we already have vector data extracted by <code>pdftools::pdf_text</code> that has just been extracted. For illustration, we’ll use <code>conbini</code> data which records <a href="https://www.jfa-fc.or.jp/particle/320.html">JFA sales from 2005 to 2021</a> to show how each function works.</p>
+<p>First of all, the data has to be split into each cell of table which originally displayed in PDF. To process this task, use <code>pt_cell()</code> and <code>pt_split()</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>conbini <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_cell</span>() <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_split</span>(<span class="dt">initial =</span> <span class="dv">29</span>, <span class="dt">n_col =</span> <span class="dv">15</span>, <span class="dt">n_row =</span> <span class="dv">2</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="co">#&gt;  [1] &quot;1月&quot;     &quot;561,491&quot; &quot;1.6%&quot;    &quot;513,357&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="co">#&gt;  [5] &quot;-1.7%&quot;   &quot;38,861&quot;  &quot;2.1%&quot;    &quot;908,165&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="co">#&gt;  [9] &quot;2.4%&quot;    &quot;838,523&quot; &quot;-0.6%&quot;   &quot;618.3&quot;  </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="co">#&gt; [13] &quot;-0.8%&quot;   &quot;612.2&quot;   &quot;-1.1%\n&quot;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="co">#&gt; [[2]]</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="co">#&gt;  [1] &quot;2月&quot;     &quot;523,385&quot; &quot;-1.4%&quot;   &quot;477,521&quot;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="co">#&gt;  [5] &quot;-2.5%&quot;   &quot;39,257&quot;  &quot;2.2%&quot;    &quot;861,472&quot;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a><span class="co">#&gt;  [9] &quot;-1.5%&quot;   &quot;791,004&quot; &quot;-3.7%&quot;   &quot;607.5&quot;  </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a><span class="co">#&gt; [13] &quot;0.1%&quot;    &quot;603.7&quot;   &quot;1.2%\n&quot;</span></span></code></pre></div>
+<p>The argument <code>initial</code> in <code>pt_split()</code> denotes a initial cell for records. Note that it indicates a record for inner data, do not specify a raw of column names.</p>
+<p>We will also wonder which number is to be <code>initial</code>? We can use <code>pt_index</code> to resolve this task. It creates index dataframe that indicates which place any word or symbol is in the vector.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>key &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%d月&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>idx &lt;-</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="st">  </span>conbini <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_cell</span>() <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_index</span>(<span class="dt">keywords =</span> key)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>idx <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">head</span>()</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="co">#&gt;      V1  V2  V3  V4  V5   V6   V7   V8   V9  V10</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="co">#&gt; 1月  29 225 420 615 810 1005 1200 1396 1592 1788</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a><span class="co">#&gt; 2月  44 240 435 630 825 1020 1215 1411 1607 1803</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="co">#&gt; 3月  59 255 450 645 840 1035 1230 1426 1622 1818</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a><span class="co">#&gt; 4月  74 270 465 660 855 1050 1245 1441 1637 1833</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="co">#&gt; 5月  89 285 480 675 870 1065 1260 1456 1652 1848</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="co">#&gt; 6月 104 300 495 690 885 1080 1275 1471 1667 1863</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="co">#&gt;      V11  V12  V13  V14  V15  V16  V17</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="co">#&gt; 1月 1984 2180 2408 2605 2802 2999 3196</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="co">#&gt; 2月 1999 2195 2423 2620 2817 3014 3211</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="co">#&gt; 3月 2014 2210 2438 2635 2832 3029 3226</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a><span class="co">#&gt; 4月 2029 2225 2453 2650 2847 3044 3241</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="co">#&gt; 5月 2044 2240 2468 2665 2863 3060 3257</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a><span class="co">#&gt; 6月 2059 2255 2484 2680 2879 3076 3273</span></span></code></pre></div>
+<p>Now we can use another function <code>pt_split_multi</code> that can handle dataframe as argument. It is a recursive version of function <code>pt_split</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>df &lt;-</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>conbini <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_cell</span>() <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_split_multi</span>(<span class="dt">index =</span> idx)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>df <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">head</span>()</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 6 x 15</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="co">#&gt;   V1    V2      V3    V4     V5    V6    V7    V8   </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="co">#&gt; 1 1月   561,491 1.6%  513,3~ -1.7% 38,8~ 2.1%  908,~</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="co">#&gt; 2 2月   523,385 -1.4% 477,5~ -2.5% 39,2~ 2.2%  861,~</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="co">#&gt; 3 3月   601,531 2.2%  549,1~ -1.4% 39,1~ 2.3%  985,~</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a><span class="co">#&gt; 4 4月   592,949 2.4%  541,2~ -0.9% 39,1~ 2.4%  994,~</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="co">#&gt; 5 5月   600,660 1.7%  548,3~ -1.9% 39,2~ 2.5%  1,01~</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="co">#&gt; 6 6月   601,371 2.5%  548,7~ -1.3% 39,3~ 2.8%  1,03~</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a><span class="co">#&gt; # ... with 7 more variables: V9 &lt;chr&gt;, V10 &lt;chr&gt;,</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="co">#&gt; #   V11 &lt;chr&gt;, V12 &lt;chr&gt;, V13 &lt;chr&gt;, V14 &lt;chr&gt;,</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a><span class="co">#&gt; #   V15 &lt;chr&gt;</span></span></code></pre></div>
+<p>Then, we may also complain about data type, that all of columns in data are character but we can easily modify this to use some methods already exist. Since the example data is essentially numerical and limited in time period, I packed a method for it that processes required task at one step.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>df <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">pt_modify</span>(<span class="dv">2005</span>) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">head</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 6 x 16</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">#&gt;    year month     V2    V3     V4    V5    V6    V7</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co">#&gt; 1  2005     1 561491   1.6 513357  -1.7 38861   2.1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="co">#&gt; 2  2005     2 523385  -1.4 477521  -2.5 39257   2.2</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="co">#&gt; 3  2005     3 601531   2.2 549144  -1.4 39118   2.3</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="co">#&gt; 4  2005     4 592949   2.4 541234  -0.9 39170   2.4</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="co">#&gt; 5  2005     5 600660   1.7 548391  -1.9 39229   2.5</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="co">#&gt; 6  2005     6 601371   2.5 548714  -1.3 39357   2.8</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a><span class="co">#&gt; # ... with 8 more variables: V8 &lt;dbl&gt;, V9 &lt;dbl&gt;,</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="co">#&gt; #   V10 &lt;dbl&gt;, V11 &lt;dbl&gt;, V12 &lt;dbl&gt;, V13 &lt;dbl&gt;,</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="co">#&gt; #   V14 &lt;dbl&gt;, V15 &lt;dbl&gt;</span></span></code></pre></div>
+<p>Now we can analyze the data as always.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>df <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">pt_modify</span>(<span class="dv">2005</span>) <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">date =</span> stringr<span class="op">::</span><span class="kw">str_c</span>(year, month, <span class="st">&quot;01&quot;</span>) <span class="op">|</span><span class="er">&gt;</span><span class="st"> </span>lubridate<span class="op">::</span><span class="kw">ymd</span>()) <span class="op">|</span><span class="er">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(date, V5)) <span class="op">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    <span class="dt">title =</span> <span class="st">&quot;コンビニエンスストアの売上高前年比の推移&quot;</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    <span class="dt">x =</span> <span class="st">&quot;月&quot;</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="dt">y =</span> <span class="st">&quot;既存店売上高前年比&quot;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>  )</span></code></pre></div>
+<img src="data:image/png;base64,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" width="100%" />
+
+</body>
+</html>
