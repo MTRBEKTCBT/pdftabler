@@ -1,4 +1,9 @@
-#' Fixing character to numeric data
+#' 年次時系列データの加工
+#'
+#' 単位記号がついていたりして
+#' 文字列として扱われてしまうデータを数値として加工する。
+#' 年次データに年数がついていない場合
+#' 年数を追加する。
 #'
 #' @param data vector or list of vector
 #' @examples

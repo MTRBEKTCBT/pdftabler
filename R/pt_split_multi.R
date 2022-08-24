@@ -1,5 +1,9 @@
 #' Extract data
 #'
+#' \code{pt_split_year}のラッパー関数。
+#' \code{pt_index}によって表の行と列の位置情報が与えられている場合
+#' 抽出したpdf表を一括でデータフレームに変換できる。
+#'
 #' @param data vector
 #' @param index data frame
 #' @examples
@@ -8,14 +12,14 @@
 #' @importFrom purrr pmap_df
 #' @importFrom tibble tibble
 pt_split_multi <- \(data, index = idx) {
-  years <- seq(ncol(index))
+  n_col <- seq(ncol(index))
   pmap_df(
     tibble(
-      years = years
+      n_col = n_col
       ),
-    \(years) {
+    \(n_col) {
       data |>
-      pt_split_year(index = index[seq(nrow(index)), years])
+      pt_split_year(index = index[seq(nrow(index)), n_col])
     }
   )
 }

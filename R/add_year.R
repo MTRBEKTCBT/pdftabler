@@ -1,6 +1,10 @@
-#' Add year column in data frame
+#' データフレームに年数をを加える。
 #'
-#' @param data data frame
+#' \code{data}はデータフレーム。
+#' \code{year}は年数のベクトル。
+#' データフレームの長さと年数ベクトルの長さは等しくなければならない。
+#'
+#' @param data データフレーム
 #' @param year vector
 #' @examples
 #' \dontrun{df |> add_year(2001:2020)}

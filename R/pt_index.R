@@ -1,5 +1,9 @@
 #' Create index for extracted data from pdf.
 #'
+#' pdfから抽出した表の加工のためのインデックスを作成する。
+#' このインデックスは主に表の1列目の文字列のパターンを指定し、
+#' そのパターンに一致するベクトルの位置番号を返す。
+#'
 #' @param data vector or list of vector
 #' @param keywords character vector which indicates first column of each raw.
 #' @examples
